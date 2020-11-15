@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: 10px;
 }
 
 body {
@@ -15,17 +16,32 @@ body {
   display: block;
 }
 
+/* ====================================================================================================================== */
+/* MENU */
+/* ====================================================================================================================== */
+
 nav {
-  background-color: #999;
+  background-color: #777;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  transition: 0.5s;
 }
 
 .menu,
-.submenu {
+.submenu,
+.secsubmenu {
   list-style: none;
+}
+
+nav:hover,
+.submenu:hover,
+.secsubmenu:hover {
+  background-color: #bbb;
+}
+
+.menu {
   margin-left: 50px;
 }
 
@@ -41,30 +57,55 @@ nav {
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
-  width: 100px;
-  line-height: 30px;
-  border-radius: 30%;
-  box-shadow: 0 0 3px 3px royalblue, 0 0 3px 6px white;
+  width: 170px;
+  line-height: 35px;
+  box-shadow: 0 0 0px 2px royalblue, 0 0 0px 4px white;
+  border: 2px solid white;
+  font-size: 2rem;
+  transition: 0.3s;
 }
 
 .menu li a:hover {
+  background-color: blueviolet;
+  box-shadow: 0 0 0px 2px blueviolet, 0 0 0px 4px white;
 }
+
+/* ====================================================================================================================== */
+/* SUBMENU */
+/* ====================================================================================================================== */
 
 .submenu {
   display: none;
-  margin: 0;
+  margin-top: 20px;
+  margin-left: -20px;
+  background-color: #777;
+  transition: 0.5s;
 }
 
-.menu li:hover ul {
+.menu li:hover .submenu {
   display: block;
   position: absolute;
 }
 
-.submenu li {
-  padding: 20px 0 0 0;
+.submenu > li {
   float: none;
+  position: relative;
 }
 
-.submenu li a {
-  /* background-color: royalblue; */
+/* ====================================================================================================================== */
+/* SECSUBMENU */
+/* ====================================================================================================================== */
+.secsubmenu {
+  display: none;
+  margin: 0;
+  background-color: #777;
+  transition: 0.5s;
+}
+
+.submenu li:hover .secsubmenu {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 210px;
+  width: 1050px;
 }
