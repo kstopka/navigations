@@ -16,10 +16,6 @@ body {
   display: block;
 }
 
-/* ====================================================================================================================== */
-/* MENU */
-/* ====================================================================================================================== */
-
 nav {
   background-color: #777;
   position: fixed;
@@ -32,10 +28,13 @@ nav {
 .menu,
 .submenu,
 .secsubmenu {
+  background-color: #777;
   list-style: none;
+  transition: 0.5s;
 }
 
 nav:hover,
+.menu:hover,
 .submenu:hover,
 .secsubmenu:hover {
   background-color: #bbb;
@@ -59,7 +58,7 @@ nav:hover,
   text-decoration: none;
   width: 170px;
   line-height: 35px;
-  box-shadow: 0 0 0px 2px royalblue, 0 0 0px 4px white;
+  box-shadow: 0 0 0px 3px royalblue, 0 0 0px 5px white;
   border: 2px solid white;
   font-size: 2rem;
   transition: 0.3s;
@@ -67,19 +66,12 @@ nav:hover,
 
 .menu li a:hover {
   background-color: blueviolet;
-  box-shadow: 0 0 0px 2px blueviolet, 0 0 0px 4px white;
+  box-shadow: 0 0 0px 3px blueviolet, 0 0 0px 5px white;
 }
-
-/* ====================================================================================================================== */
-/* SUBMENU */
-/* ====================================================================================================================== */
 
 .submenu {
   display: none;
-  margin-top: 20px;
-  margin-left: -20px;
-  background-color: #777;
-  transition: 0.5s;
+  margin: 20px 0 0 -20px;
 }
 
 .menu li:hover .submenu {
@@ -92,14 +84,9 @@ nav:hover,
   position: relative;
 }
 
-/* ====================================================================================================================== */
-/* SECSUBMENU */
-/* ====================================================================================================================== */
 .secsubmenu {
   display: none;
   margin: 0;
-  background-color: #777;
-  transition: 0.5s;
 }
 
 .submenu li:hover .secsubmenu {
@@ -108,4 +95,107 @@ nav:hover,
   top: 0;
   left: 210px;
   width: 1050px;
+}
+
+.menu > li:nth-child(4) .submenu li:hover .secsubmenu {
+  width: 840px;
+}
+.menu > li:last-child .submenu li:hover .secsubmenu {
+  width: 630px;
+}
+
+@media (max-width: 1366px) {
+  body {
+    background-color: yellow;
+  }
+
+  .menu {
+    margin-left: 25px;
+  }
+
+  .menu li {
+    padding: 12px;
+  }
+
+  .menu li a {
+    width: 110px;
+    line-height: 20px;
+    font-size: 1.3rem;
+  }
+
+  .submenu {
+    margin: 12px 0 0 -12px;
+  }
+
+  .submenu li:hover .secsubmenu {
+    left: 134px;
+    width: 670px;
+  }
+
+  .menu > li:nth-child(4) .submenu li:hover .secsubmenu {
+    width: 670px;
+  }
+  .menu > li:last-child .submenu li:hover .secsubmenu {
+    width: 536px;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    background-color: royalblue;
+  }
+
+  nav {
+    position: static;
+  }
+
+  .menu {
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .menu li {
+    float: none;
+    padding: 20px;
+  }
+
+  .menu > li:hover {
+    padding-bottom: 0;
+  }
+
+  .menu li .submenu > li:hover {
+    padding-bottom: 0;
+  }
+
+  .menu li a {
+    width: 100%;
+    line-height: 35px;
+    font-size: 2rem;
+  }
+
+  .submenu {
+    margin: 20px -20px 0 -20px;
+  }
+
+  .menu li:hover .submenu {
+    position: static;
+  }
+  .submenu > li {
+    position: static;
+  }
+  .secsubmenu {
+    margin: 20px -20px 0 -20px;
+  }
+
+  .submenu li:hover .secsubmenu {
+    position: static;
+    width: auto;
+  }
+
+  .menu > li:nth-child(4) .submenu li:hover .secsubmenu {
+    width: auto;
+  }
+  .menu > li:last-child .submenu li:hover .secsubmenu {
+    width: auto;
+  }
 }
