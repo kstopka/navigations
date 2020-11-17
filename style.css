@@ -4,9 +4,11 @@
   box-sizing: border-box;
   font-size: 10px;
 }
-
+.toggleMenu {
+  display: none;
+}
 body {
-  background-color: #000;
+  background-color: royalblue;
   height: 500vh;
 }
 
@@ -17,7 +19,7 @@ body {
 }
 
 nav {
-  background-color: #777;
+  background-color: #555;
   position: fixed;
   top: 0;
   left: 0;
@@ -28,16 +30,22 @@ nav {
 .menu,
 .submenu,
 .secsubmenu {
-  background-color: #777;
+  background-color: #555;
   list-style: none;
   transition: 0.5s;
 }
 
-nav:hover,
-.menu:hover,
-.submenu:hover,
-.secsubmenu:hover {
+nav:hover {
+  background-color: #999;
+}
+.menu:hover {
   background-color: #bbb;
+}
+.submenu:hover {
+  background-color: #ddd;
+}
+.secsubmenu:hover {
+  background-color: #fff;
 }
 
 .menu {
@@ -105,10 +113,6 @@ nav:hover,
 }
 
 @media (max-width: 1366px) {
-  body {
-    background-color: yellow;
-  }
-
   .menu {
     margin-left: 25px;
   }
@@ -141,15 +145,26 @@ nav:hover,
 }
 
 @media (max-width: 640px) {
-  body {
-    background-color: royalblue;
+  nav {
+    position: absolute;
   }
 
-  nav {
-    position: static;
+  .toggleMenu {
+    display: block;
+    text-align: center;
+    padding: 20px;
+  }
+  .toggleMenu button {
+    font-size: 2rem;
+    background-color: royalblue;
+    border: 2px solid white;
+    box-shadow: 0 0 0px 3px royalblue, 0 0 0px 5px white;
+    color: white;
+    width: 100%;
   }
 
   .menu {
+    display: none;
     text-align: center;
     margin-left: 0;
   }
