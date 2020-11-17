@@ -8,8 +8,10 @@
   display: none;
 }
 body {
-  background-color: royalblue;
-  height: 500vh;
+  height: 100vh;
+  background-image: url("./background.jpg");
+  background-position: 50% 50%;
+  background-size: cover;
 }
 
 .clearfix::after {
@@ -35,17 +37,15 @@ nav {
   transition: 0.5s;
 }
 
-nav:hover {
+nav:hover,
+.menu:hover {
   background-color: #999;
 }
-.menu:hover {
+.submenu:hover {
   background-color: #bbb;
 }
-.submenu:hover {
-  background-color: #ddd;
-}
 .secsubmenu:hover {
-  background-color: #fff;
+  background-color: #ddd;
 }
 
 .menu {
@@ -155,6 +155,7 @@ nav:hover {
     padding: 20px;
   }
   .toggleMenu button {
+    line-height: 35px;
     font-size: 2rem;
     background-color: royalblue;
     border: 2px solid white;

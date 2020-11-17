@@ -7,11 +7,11 @@ btn.addEventListener(`click`, () => {
     flag = !flag;
     menu.style.display = `none`;
     btn.textContent = `Open Menu`;
-    div.style.backgroundColor = `#333`;
+    // div.style.backgroundColor = `#555`;
   } else if (!flag) {
     menu.style.display = `block`;
     flag = !flag;
     btn.textContent = `Close Menu`;
-    div.style.backgroundColor = `#777`;
+    // div.style.backgroundColor = `#777`;
   }
 });

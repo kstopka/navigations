@@ -1,0 +1,224 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 10px;
+}
+.toggleMenu {
+  display: none;
+}
+body {
+  height: 100vh;
+  background-image: url("./background.jpg");
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+nav {
+  /* background-color: #555; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: 0.5s;
+}
+
+.menu,
+.submenu,
+.secsubmenu {
+  /* background-color: #555; */
+  list-style: none;
+  transition: 0.5s;
+}
+
+/* nav:hover,
+.menu:hover {
+  background-color: #999;
+}
+.submenu:hover {
+  background-color: #bbb;
+}
+.secsubmenu:hover {
+  background-color: #ddd;
+} */
+
+.menu {
+  margin-left: 50px;
+}
+
+.menu li {
+  padding: 20px;
+  float: left;
+}
+
+.menu li a {
+  display: block;
+  /* background-color: royalblue; */
+  color: black;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  width: 170px;
+  line-height: 35px;
+  /* box-shadow: 0 0 0px 3px royalblue, 0 0 0px 5px white; */
+  border: 2px solid black;
+  font-size: 2rem;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+.menu li a:hover {
+  color: white;
+  background-color: black;
+  /* box-shadow: 0 0 0px 3px blueviolet, 0 0 0px 5px white; */
+}
+
+.submenu {
+  display: none;
+  margin: 20px 0 0 -20px;
+}
+
+.menu li:hover .submenu {
+  display: block;
+  position: absolute;
+}
+
+.submenu > li {
+  float: none;
+  position: relative;
+}
+
+.secsubmenu {
+  display: none;
+  margin: 0;
+}
+
+.submenu li:hover .secsubmenu {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 210px;
+  width: 1050px;
+}
+
+.menu > li:nth-child(4) .submenu li:hover .secsubmenu {
+  width: 840px;
+}
+.menu > li:last-child .submenu li:hover .secsubmenu {
+  width: 630px;
+}
+
+@media (max-width: 1366px) {
+  .menu {
+    margin-left: 25px;
+  }
+
+  .menu li {
+    padding: 12px;
+  }
+
+  .menu li a {
+    width: 110px;
+    line-height: 20px;
+    font-size: 1.3rem;
+  }
+
+  .submenu {
+    margin: 12px 0 0 -12px;
+  }
+
+  .submenu li:hover .secsubmenu {
+    left: 134px;
+    width: 670px;
+  }
+
+  .menu > li:nth-child(4) .submenu li:hover .secsubmenu {
+    width: 670px;
+  }
+  .menu > li:last-child .submenu li:hover .secsubmenu {
+    width: 536px;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    background-attachment: fixed;
+  }
+
+  nav {
+    position: absolute;
+  }
+
+  .toggleMenu {
+    display: block;
+    text-align: center;
+    padding: 20px;
+  }
+  .toggleMenu button {
+    font-size: 2rem;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid black;
+    line-height: 35px;
+    /* box-shadow: 0 0 0px 3px royalblue, 0 0 0px 5px white; */
+    color: black;
+    width: 100%;
+  }
+
+  .menu {
+    /* display: none; */
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .menu li {
+    float: none;
+    padding: 20px;
+  }
+
+  .menu > li:hover {
+    padding-bottom: 0;
+  }
+
+  .menu li .submenu > li:hover {
+    padding-bottom: 0;
+  }
+
+  .menu li a {
+    width: 100%;
+    line-height: 35px;
+    font-size: 2rem;
+    border-radius: 0;
+  }
+
+  .submenu {
+    margin: 20px -20px 0 -20px;
+  }
+
+  .menu li:hover .submenu {
+    position: static;
+  }
+  .submenu > li {
+    position: static;
+  }
+  .secsubmenu {
+    margin: 20px -20px 0 -20px;
+  }
+
+  .submenu li:hover .secsubmenu {
+    position: static;
+    width: auto;
+  }
+
+  .menu > li:nth-child(4) .submenu li:hover .secsubmenu {
+    width: auto;
+  }
+  .menu > li:last-child .submenu li:hover .secsubmenu {
+    width: auto;
+  }
+}
