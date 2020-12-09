@@ -23,7 +23,7 @@ section {
 
 nav {
   background-color: #242424;
-  border-bottom: #b8bbbf solid 1px;
+  border-bottom: chartreuse solid 1px;
 }
 ul {
   list-style: none;
@@ -33,6 +33,7 @@ ul {
 
 li {
   padding: 10px;
+  padding-bottom: 0px;
 }
 
 a {
@@ -52,6 +53,8 @@ a:hover {
   color: #fff;
 }
 li.active a {
-  background-color: rgba(128, 255, 0, 0.03);
+  border-radius: 0%;
+  border-bottom: chartreuse 3px solid;
+  background-color: #242424;
   color: chartreuse;
 }
